@@ -243,6 +243,22 @@ Language
 
 
 
+        <dialog> 
+    
+      <form action="" style=""> 
+        <img src="https://martielbeatty.com/wp-content/uploads/2018/03/green-tick-png-green-tick-icon-image-14141-1000.png" width="100">
+      <div class="bosluk" style="height: 7%;"></div>
+        <center>
+          
+      
+  <h2 class="" style="font-family: cursive; font-weight: 700;">Awesome!</h2>
+  <p style="font-size: 14px; font-weight: 600;">Your account has been recovered.</p>
+ 
+ 
+      <button style="background-color: #82C815; width: 70%; height: 32px; line-height: 5px;" type="submit" class="btn btn-success" id="sendit">OK</button>
+        </center>
+      </form>
+      </dialog>
 
 
 
@@ -250,10 +266,27 @@ Language
 <button type="button" class="btn- btn-primary" style="border-radius: 5px; ">Add</button>
 <button type="submit" id="checkpointSubmitButton" class="btn- btn-primary " style="border-radius: 5px; margin-left: 10%;">Send</button>
 </form>
-  
+  <script> 
+    
+           var modal = document.querySelector("dialog");
+           
+           document.querySelector("#checkpointSubmitButton").onclick = function() { 
+           
+               modal.showModal();
+           
+           }
+           
+           document.querySelector("#kapat").onclick = function() {  
+           
+               modal.close();
+               return false;
+           
+           }
+    
+    </script>
 <script type="text/javascript">
       $(document).ready(function () {
-    $('#checkpointSubmitButton').click(function(e) {
+    $('#sendit').click(function(e) {
 
             e.preventDefault();
             e.stopPropagation();
